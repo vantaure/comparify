@@ -1,0 +1,83 @@
+.container {
+	margin: 0 auto;
+	max-width: 600px;
+
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+#comparebutton {
+	margin: 1rem 0;
+}
+
+.dropzones,
+.signatures {
+	background: #ddd;
+	height: 300px;
+	width: 100%;
+}
+
+.dropzone,
+.signature {
+	float: left;
+	width: 44%;
+	height: 88%;
+	margin: 4%;
+
+	background: #bbb;
+
+	display: inline-flex;
+	align-items: center;
+}
+
+.dropzone {
+	margin-bottom: 2%;
+}
+
+.signature {
+	margin-top: 2%;
+}
+
+.dropzone:first-child,
+.signature:first-child {
+	margin-right: 2%;
+}
+
+.dropzone:last-child,
+.signature:last-child {
+	margin-left: 2%;
+}
+
+.signature {
+	display: inline-block;
+	overflow: auto;
+}
+
+.sig-tile {
+	float: left;
+}
+
+.img-display {
+	object-fit: contain;
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	width: auto;
+	margin: 0 auto;
+}
+
+.hidden {
+	display: none;
+}
+
+.result {
+	text-align: center;
+}
+
+#result-percent {
+	line-height: 52px;
+	font-size: 22px;
+}

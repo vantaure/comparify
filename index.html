@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Comparify Demo</title>
+		<link rel="stylesheet" href="demo.css">
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="dropzones">
+				<div class="dropzone image1">
+					<img id="image-display-1" class="img-display" src="drop.png">
+				</div>
+				<div class="dropzone image2">
+					<img id="image-display-2" class="img-display" src="drop.png">
+				</div>
+			</div>
+			<div class="signatures">
+				<div class="signature" id="signature-1"></div>
+				<div class="signature" id="signature-2"></div>
+			</div>
+			<button id="comparebutton">Compare</button>
+			<div class="result">
+				<span id="result-percent">Drop two images and click 'compare'</span>
+			</div>
+
+			<div id="loader-container">
+				<div id="loader"></div>
+			</div>
+		</div>
+
+		<script src="comparify.js"></script>
+		<script src="demo.js"></script>
+	</body>
+</html>

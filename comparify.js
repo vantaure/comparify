@@ -1,6 +1,5 @@
 window.Comparify = (function() {
 	var resolution = 20;
-	var fast = false;
 
 	// Internal methods
 
@@ -93,38 +92,6 @@ window.Comparify = (function() {
 		img.src = image;
 	}
 
-	function cellularizeFast(canvas, image, callback) {
-		// Divide the image into cells.
-
-		var cellStart = Date.now();
-
-		var ctx = canvas.getContext('2d');
-		var img = new Image();
-		var cells = [];
-
-		img.onload = function(e) {
-			canvas.width = resolution;
-			canvas.height = resolution;
-
-			var loopStart = Date.now();
-
-			ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, resolution, resolution);
-
-			for (var y = 0; y < resolution; y++) {
-				for (var x = 0; x < resolution; x++) {
-					cells.push(rgbaParse(ctx.getImageData(x, y, 1, 1))[0]);
-				}
-			}
-
-			console.log(`Fastlooped in ${Date.now() - loopStart}ms.`);
-
-			return callback(cells);
-		};
-
-		img.src = image;
-	}
-
-
 	/**************************************
 				   Algorithms
 	**************************************/
@@ -165,9 +132,7 @@ window.Comparify = (function() {
 	// Public methods
 
 	Comparify.prototype.getSignature = function(image, callback) {
-		return (fast === true)
-			? cellularizeFast(this.canvas, image, callback)
-			: cellularize(this.canvas, image, callback);
+		return cellularize(this.canvas, image, callback);
 	}
 
 	Comparify.prototype.compare = function(sig1, sig2, algorithm, callback) {

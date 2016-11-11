@@ -4,7 +4,7 @@
 So, here's a little proof of concept for an idea I had about detecting duplicate images. My only requirements were:
 
 0. Runs in a browser with no external dependencies.
-1. The process should be minimally effected by JPEGification. A crappy quality version of a picture should still be considered the same picture as a high res, 25MB version.
+1. The process should be minimally affected by JPEGification. A crappy quality version of a picture should still be considered the same picture as a high res, 25MB version.
 2. The process should be minimally effected by image size. A thumbnail of an image should be an identical match.
 3. We don't care about file format. A PNG converted to a JPEG, but otherwise unaltered should be an identical match.
 
